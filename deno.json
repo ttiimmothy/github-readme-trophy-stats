@@ -1,6 +1,7 @@
 {
   "tasks": {
     "start": "deno run -A main.ts",
+    "dev": "deno run -A --watch main.ts",
     "debug": "deno run --inspect-brk -A main.ts",
     "format": "deno fmt",
     "lint": "deno lint",

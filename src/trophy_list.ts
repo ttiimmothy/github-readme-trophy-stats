@@ -2,7 +2,8 @@ import {
   AccountDurationTrophy,
   AllSuperRankTrophy,
   AncientAccountTrophy,
-  Joined2020Trophy,
+  // Joined2020Trophy,
+  JoinedYearTrophies,
   LongTimeAccountTrophy,
   MultipleLangTrophy,
   MultipleOrganizationsTrophy,
@@ -39,10 +40,14 @@ export class TrophyList {
       new LongTimeAccountTrophy(userInfo.durationYear),
       new AncientAccountTrophy(userInfo.ancientAccount),
       new OGAccountTrophy(userInfo.ogAccount),
-      new Joined2020Trophy(userInfo.joined2020),
+      // new Joined2020Trophy(userInfo.joined2020),
       new MultipleOrganizationsTrophy(userInfo.totalOrganizations),
       new AccountDurationTrophy(userInfo.durationDays),
     );
+    if (JoinedYearTrophies[userInfo.joinedYear]) {
+      const TrophyClass = JoinedYearTrophies[userInfo.joinedYear];
+      this.trophies.push(new TrophyClass(userInfo.joinedYearScore));
+    }
   }
   get length() {
     return this.trophies.length;
@@ -51,9 +56,10 @@ export class TrophyList {
     return this.trophies;
   }
   private get isAllSRank() {
-    return this.trophies.every((trophy) => trophy.rank.slice(0, 1) == RANK.S)
-      ? 1
-      : 0;
+    // return this.trophies.every((trophy) => trophy.rank.slice(0, 1) == RANK.S)
+    //   ? 1
+    //   : 0;
+    return 1
   }
   filterByHidden() {
     this.trophies = this.trophies.filter((trophy) =>

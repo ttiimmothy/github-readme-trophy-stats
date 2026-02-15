@@ -136,21 +136,44 @@ export class AllSuperRankTrophy extends Trophy {
     this.hidden = true;
   }
 }
-export class Joined2020Trophy extends Trophy {
-  constructor(score: number) {
-    const rankConditions = [
-      new RankCondition(
-        RANK.SECRET,
-        "Everything started...",
-        1,
-      ),
-    ];
-    super(score, rankConditions);
-    this.title = "Joined2020";
-    this.filterTitles = ["Joined2020"];
-    this.bottomMessage = "Joined 2020";
-    this.hidden = true;
-  }
+// export class Joined2020Trophy extends Trophy {
+//   constructor(score: number) {
+//     const rankConditions = [
+//       new RankCondition(
+//         RANK.SECRET,
+//         "Everything started...",
+//         1,
+//       ),
+//     ];
+//     super(score, rankConditions);
+//     this.title = "Joined2020";
+//     this.filterTitles = ["Joined2020"];
+//     this.bottomMessage = "Joined 2020";
+//     this.hidden = true;
+//   }
+// }
+export function createJoinedYearTrophy(year: number) {
+  return class extends Trophy {
+    constructor(score: number) {
+      const rankConditions = [
+        new RankCondition(
+          RANK.SECRET,
+          "Everything started...",
+          1,
+        ),
+      ];
+      super(score, rankConditions);
+      this.title = `Joined${year}`;
+      this.filterTitles = [`Joined${year}`];
+      this.bottomMessage = `Joined ${year}`;
+      this.hidden = true;
+    }
+  };
+}
+const currentYear = new Date().getFullYear(); // 2026
+export const JoinedYearTrophies: Record<number, any> = {};
+for (let year = 2020; year <= currentYear; year++) {
+  JoinedYearTrophies[year] = createJoinedYearTrophy(year);
 }
 export class AncientAccountTrophy extends Trophy {
   constructor(score: number) {
@@ -158,7 +181,7 @@ export class AncientAccountTrophy extends Trophy {
       new RankCondition(
         RANK.SECRET,
         "Ancient User",
-        1,
+        0,
       ),
     ];
     super(score, rankConditions);
@@ -206,7 +229,7 @@ export class OGAccountTrophy extends Trophy {
       new RankCondition(
         RANK.SECRET,
         "OG User",
-        1,
+        0,
       ),
     ];
     super(score, rankConditions);
@@ -223,43 +246,43 @@ export class TotalReviewsTrophy extends Trophy {
       new RankCondition(
         RANK.SSS,
         "God Reviewer",
-        70,
+        7,
       ),
       new RankCondition(
         RANK.SS,
         "Deep Reviewer",
-        57,
+        6,
       ),
       new RankCondition(
         RANK.S,
         "Super Reviewer",
-        45,
+        5,
       ),
       new RankCondition(
         RANK.AAA,
         "Ultra Reviewer",
-        30,
+        4,
       ),
       new RankCondition(
         RANK.AA,
         "Hyper Reviewer",
-        20,
+        3,
       ),
       new RankCondition(
         RANK.A,
         "Active Reviewer",
-        8,
+        2,
       ),
       new RankCondition(
         RANK.B,
         "Intermediate Reviewer",
-        3,
-      ),
-      new RankCondition(
-        RANK.C,
-        "New Reviewer",
         1,
       ),
+      // new RankCondition(
+      //   RANK.C,
+      //   "New Reviewer",
+      //   1,
+      // ),
     ];
     super(score, rankConditions);
     this.title = "Reviews";
@@ -323,43 +346,43 @@ export class TotalStarTrophy extends Trophy {
       new RankCondition(
         RANK.SSS,
         "Super Stargazer",
-        8,
+        3,
       ),
       new RankCondition(
         RANK.SS,
         "High Stargazer",
-        7,
+        2,
       ),
       new RankCondition(
         RANK.S,
         "Stargazer",
-        6,
-      ),
-      new RankCondition(
-        RANK.AAA,
-        "Super Star",
-        5,
-      ),
-      new RankCondition(
-        RANK.AA,
-        "High Star",
-        4,
-      ),
-      new RankCondition(
-        RANK.A,
-        "You are a Star",
-        3,
-      ),
-      new RankCondition(
-        RANK.B,
-        "Middle Star",
-        2,
-      ),
-      new RankCondition(
-        RANK.C,
-        "First Star",
         1,
       ),
+      // new RankCondition(
+      //   RANK.AAA,
+      //   "Super Star",
+      //   4,
+      // ),
+      // new RankCondition(
+      //   RANK.AA,
+      //   "High Star",
+      //   3,
+      // ),
+      // new RankCondition(
+      //   RANK.A,
+      //   "You are a Star",
+      //   2,
+      // ),
+      // new RankCondition(
+      //   RANK.B,
+      //   "Middle Star",
+      //   1,
+      // ),
+      // new RankCondition(
+      //   RANK.C,
+      //   "First Star",
+      //   1,
+      // ),
     ];
     super(score, rankConditions);
     this.title = "Stars";
