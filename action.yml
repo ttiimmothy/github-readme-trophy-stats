@@ -1,5 +1,7 @@
-name: Generate GitHub Profile Trophy SVG
-description: Run the local generator script to produce an SVG.
+name: Generate GitHub Profile Trophy
+description: Run the local generator script to produce an SVG
+branding:
+  icon: user-check
 inputs:
   username:
     description: "GitHub username to generate the trophy for"
