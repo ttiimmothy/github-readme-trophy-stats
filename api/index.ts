@@ -130,23 +130,23 @@ async function app(req: Request): Promise<Response> {
   let userInfo = JSON.parse(userInfoCached);
   const hasCache = !!Object.keys(userInfo).length;
 
-  if (!hasCache) {
-    const userResponseInfo = await client.requestUserInfo(username);
-    if (userResponseInfo instanceof ServiceError) {
-      return new Response(
-        ErrorPage({ error: userResponseInfo }).render(),
-        {
-          status: userResponseInfo.code,
-          headers: new Headers({
-            "Content-Type": "text",
-            "Cache-Control": cacheControlHeader,
-          }),
-        },
-      );
-    }
-    userInfo = userResponseInfo;
-    await cacheProvider.set(userKeyCache, JSON.stringify(userInfo));
+  // if (!hasCache) {
+  const userResponseInfo = await client.requestUserInfo(username);
+  if (userResponseInfo instanceof ServiceError) {
+    return new Response(
+      ErrorPage({ error: userResponseInfo }).render(),
+      {
+        status: userResponseInfo.code,
+        headers: new Headers({
+          "Content-Type": "text",
+          "Cache-Control": cacheControlHeader,
+        }),
+      },
+    );
   }
+  userInfo = userResponseInfo;
+  await cacheProvider.set(userKeyCache, JSON.stringify(userInfo));
+  // }
   // Success Response
   return new Response(
     new Card(
