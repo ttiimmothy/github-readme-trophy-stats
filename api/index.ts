@@ -24,7 +24,10 @@ const cacheControlHeader = [
 const defaultHeaders = new Headers(
   {
     "Content-Type": "image/svg+xml",
-    "Cache-Control": cacheControlHeader,
+    // "Cache-Control": cacheControlHeader,
+    "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate", // 強制不快取
+    "Pragma": "no-cache",
+    "Expires": "0",
   },
 );
 
