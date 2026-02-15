@@ -24,10 +24,10 @@ const cacheControlHeader = [
 const defaultHeaders = new Headers(
   {
     "Content-Type": "image/svg+xml",
-    // "Cache-Control": cacheControlHeader,
-    "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate", // 強制不快取
-    "Pragma": "no-cache",
-    "Expires": "0",
+    "Cache-Control": cacheControlHeader,
+    // "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
+    // "Pragma": "no-cache",
+    // "Expires": "0",
   },
 );
 
@@ -133,23 +133,23 @@ async function app(req: Request): Promise<Response> {
   let userInfo = JSON.parse(userInfoCached);
   const hasCache = !!Object.keys(userInfo).length;
 
-  // if (!hasCache) {
-  const userResponseInfo = await client.requestUserInfo(username);
-  if (userResponseInfo instanceof ServiceError) {
-    return new Response(
-      ErrorPage({ error: userResponseInfo }).render(),
-      {
-        status: userResponseInfo.code,
-        headers: new Headers({
-          "Content-Type": "text",
-          "Cache-Control": cacheControlHeader,
-        }),
-      },
-    );
+  if (!hasCache) {
+    const userResponseInfo = await client.requestUserInfo(username);
+    if (userResponseInfo instanceof ServiceError) {
+      return new Response(
+        ErrorPage({ error: userResponseInfo }).render(),
+        {
+          status: userResponseInfo.code,
+          headers: new Headers({
+            "Content-Type": "text",
+            "Cache-Control": cacheControlHeader,
+          }),
+        },
+      );
+    }
+    userInfo = userResponseInfo;
+    await cacheProvider.set(userKeyCache, JSON.stringify(userInfo));
   }
-  userInfo = userResponseInfo;
-  await cacheProvider.set(userKeyCache, JSON.stringify(userInfo));
-  // }
   // Success Response
   return new Response(
     new Card(
