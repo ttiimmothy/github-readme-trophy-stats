@@ -174,7 +174,7 @@ export class LongTimeAccountTrophy extends Trophy {
       new RankCondition(
         RANK.SECRET,
         "Village Elder",
-        10,
+        3,
       ),
     ];
     super(score, rankConditions);
@@ -273,42 +273,42 @@ export class AccountDurationTrophy extends Trophy {
       new RankCondition(
         RANK.SSS,
         "Seasoned Veteran",
-        70, // 20 years
+        8,
       ),
       new RankCondition(
         RANK.SS,
         "Grandmaster",
-        55, // 15 years
+        7,
       ),
       new RankCondition(
         RANK.S,
         "Master Dev",
-        40, // 10 years
+        6,
       ),
       new RankCondition(
         RANK.AAA,
         "Expert Dev",
-        28, // 7.5 years
+        5,
       ),
       new RankCondition(
         RANK.AA,
         "Experienced Dev",
-        18, // 5 years
+        4,
       ),
       new RankCondition(
         RANK.A,
         "Intermediate Dev",
-        11, // 3 years
+        3,
       ),
       new RankCondition(
         RANK.B,
         "Junior Dev",
-        6, // 1.5 years
+        2,
       ),
       new RankCondition(
         RANK.C,
         "Newbie",
-        2, // 0.5 year
+        1,
       ),
     ];
     super(score, rankConditions);
@@ -323,37 +323,37 @@ export class TotalStarTrophy extends Trophy {
       new RankCondition(
         RANK.SSS,
         "Super Stargazer",
-        2000,
+        8,
       ),
       new RankCondition(
         RANK.SS,
         "High Stargazer",
-        700,
+        7,
       ),
       new RankCondition(
         RANK.S,
         "Stargazer",
-        200,
+        6,
       ),
       new RankCondition(
         RANK.AAA,
         "Super Star",
-        100,
+        5,
       ),
       new RankCondition(
         RANK.AA,
         "High Star",
-        50,
+        4,
       ),
       new RankCondition(
         RANK.A,
         "You are a Star",
-        30,
+        3,
       ),
       new RankCondition(
         RANK.B,
         "Middle Star",
-        10,
+        2,
       ),
       new RankCondition(
         RANK.C,
@@ -373,17 +373,17 @@ export class TotalCommitTrophy extends Trophy {
       new RankCondition(
         RANK.SSS,
         "God Committer",
-        4000,
+        2000,
       ),
       new RankCondition(
         RANK.SS,
         "Deep Committer",
-        2000,
+        1000,
       ),
       new RankCondition(
         RANK.S,
         "Super Committer",
-        1000,
+        800,
       ),
       new RankCondition(
         RANK.AAA,
@@ -423,37 +423,37 @@ export class TotalFollowerTrophy extends Trophy {
       new RankCondition(
         RANK.SSS,
         "Super Celebrity",
-        1000,
+        8,
       ),
       new RankCondition(
         RANK.SS,
         "Ultra Celebrity",
-        400,
+        7,
       ),
       new RankCondition(
         RANK.S,
         "Hyper Celebrity",
-        200,
+        6,
       ),
       new RankCondition(
         RANK.AAA,
         "Famous User",
-        100,
+        5,
       ),
       new RankCondition(
         RANK.AA,
         "Active User",
-        50,
+        4,
       ),
       new RankCondition(
         RANK.A,
         "Dynamic User",
-        20,
+        3,
       ),
       new RankCondition(
         RANK.B,
         "Many Friends",
-        10,
+        2,
       ),
       new RankCondition(
         RANK.C,
@@ -473,37 +473,37 @@ export class TotalIssueTrophy extends Trophy {
       new RankCondition(
         RANK.SSS,
         "God Issuer",
-        1000,
+        8,
       ),
       new RankCondition(
         RANK.SS,
         "Deep Issuer",
-        500,
+        7,
       ),
       new RankCondition(
         RANK.S,
         "Super Issuer",
-        200,
+        6,
       ),
       new RankCondition(
         RANK.AAA,
         "Ultra Issuer",
-        100,
+        5,
       ),
       new RankCondition(
         RANK.AA,
         "Hyper Issuer",
-        50,
+        4,
       ),
       new RankCondition(
         RANK.A,
         "High Issuer",
-        20,
+        3,
       ),
       new RankCondition(
         RANK.B,
         "Middle Issuer",
-        10,
+        2,
       ),
       new RankCondition(
         RANK.C,
