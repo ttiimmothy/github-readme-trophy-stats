@@ -336,7 +336,7 @@ export class AccountDurationTrophy extends Trophy {
       new RankCondition(
         RANK.C,
         "Newbie",
-        1,
+        0,
       ),
     ];
     super(score, rankConditions);
@@ -436,7 +436,7 @@ export class TotalCommitTrophy extends Trophy {
       new RankCondition(
         RANK.C,
         "First Commit",
-        1,
+        0,
       ),
     ];
     super(score, rankConditions);
@@ -498,6 +498,11 @@ export class TotalFollowerTrophy extends Trophy {
 export class TotalIssueTrophy extends Trophy {
   constructor(score: number) {
     const rankConditions = [
+      new RankCondition(
+        RANK.SSS,
+        "Legendary Issuer",
+        8,
+      ),
       new RankCondition(
         RANK.SSS,
         "God Issuer",
@@ -586,7 +591,7 @@ export class TotalPullRequestTrophy extends Trophy {
       new RankCondition(
         RANK.C,
         "First Pull",
-        1,
+        0,
       ),
     ];
     super(score, rankConditions);
