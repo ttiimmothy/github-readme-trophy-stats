@@ -246,42 +246,42 @@ export class TotalReviewsTrophy extends Trophy {
       new RankCondition(
         RANK.SSS,
         "God Reviewer",
-        7,
+        1,
       ),
       new RankCondition(
         RANK.SS,
         "Deep Reviewer",
-        6,
+        0,
       ),
-      new RankCondition(
-        RANK.S,
-        "Super Reviewer",
-        5,
-      ),
-      new RankCondition(
-        RANK.AAA,
-        "Ultra Reviewer",
-        4,
-      ),
-      new RankCondition(
-        RANK.AA,
-        "Hyper Reviewer",
-        3,
-      ),
-      new RankCondition(
-        RANK.A,
-        "Active Reviewer",
-        2,
-      ),
-      new RankCondition(
-        RANK.B,
-        "Intermediate Reviewer",
-        1,
-      ),
+      // new RankCondition(
+      //   RANK.S,
+      //   "Super Reviewer",
+      //   5,
+      // ),
+      // new RankCondition(
+      //   RANK.AAA,
+      //   "Ultra Reviewer",
+      //   4,
+      // ),
+      // new RankCondition(
+      //   RANK.AA,
+      //   "Hyper Reviewer",
+      //   3,
+      // ),
+      // new RankCondition(
+      //   RANK.A,
+      //   "Active Reviewer",
+      //   2,
+      // ),
+      // new RankCondition(
+      //   RANK.B,
+      //   "Intermediate Reviewer",
+      //   1,
+      // ),
       // new RankCondition(
       //   RANK.C,
       //   "New Reviewer",
-      //   1,
+      //   0,
       // ),
     ];
     super(score, rankConditions);
@@ -293,6 +293,11 @@ export class TotalReviewsTrophy extends Trophy {
 export class AccountDurationTrophy extends Trophy {
   constructor(score: number) {
     const rankConditions = [
+      new RankCondition(
+        RANK.SECRET,
+        "Secret Veteran",
+        8,
+      ),
       new RankCondition(
         RANK.SSS,
         "Seasoned Veteran",
@@ -446,42 +451,42 @@ export class TotalFollowerTrophy extends Trophy {
       new RankCondition(
         RANK.SSS,
         "Super Celebrity",
-        8,
+        7,
       ),
       new RankCondition(
         RANK.SS,
         "Ultra Celebrity",
-        7,
+        6,
       ),
       new RankCondition(
         RANK.S,
         "Hyper Celebrity",
-        6,
+        5,
       ),
       new RankCondition(
         RANK.AAA,
         "Famous User",
-        5,
+        4,
       ),
       new RankCondition(
         RANK.AA,
         "Active User",
-        4,
+        3,
       ),
       new RankCondition(
         RANK.A,
         "Dynamic User",
-        3,
+        2,
       ),
       new RankCondition(
         RANK.B,
         "Many Friends",
-        2,
+        1,
       ),
       new RankCondition(
         RANK.C,
         "First Friend",
-        1,
+        0,
       ),
     ];
     super(score, rankConditions);
