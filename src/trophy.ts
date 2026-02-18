@@ -363,11 +363,11 @@ export class TotalStarTrophy extends Trophy {
         "Stargazer",
         1,
       ),
-      // new RankCondition(
-      //   RANK.AAA,
-      //   "Super Star",
-      //   4,
-      // ),
+      new RankCondition(
+        RANK.AAA,
+        "Super Star",
+        0,
+      ),
       // new RankCondition(
       //   RANK.AA,
       //   "High Star",
@@ -536,7 +536,7 @@ export class TotalIssueTrophy extends Trophy {
       new RankCondition(
         RANK.C,
         "First Issue",
-        1,
+        0,
       ),
     ];
     super(score, rankConditions);
