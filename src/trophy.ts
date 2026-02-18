@@ -499,9 +499,9 @@ export class TotalIssueTrophy extends Trophy {
   constructor(score: number) {
     const rankConditions = [
       new RankCondition(
-        RANK.SSS,
+        RANK.SECRET,
         "Legendary Issuer",
-        8,
+        9,
       ),
       new RankCondition(
         RANK.SSS,
